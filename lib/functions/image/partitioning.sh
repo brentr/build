@@ -394,7 +394,7 @@ function prepare_partitions() {
 		run_host_command_logged mkfs.${mkfs[$bootfs]} ${mkopts[$bootfs]} ${mkopts_label[$bootfs]:+${mkopts_label[$bootfs]}"$BOOT_FS_LABEL"} ${LOOP}p${bootpart}
 		mkdir -p $MOUNT/boot/
 		run_host_command_logged mount ${LOOP}p${bootpart} $MOUNT/boot/
-		echo "UUID=$(blkid -s UUID -o value ${LOOP}p${bootpart}) /boot ${mkfs[$bootfs]} defaults${mountopts[$bootfs]} 0 2" >> $SDCARD/etc/fstab
+		echo "UUID=$(blkid -s UUID -o value ${LOOP}p${bootpart}) /boot ${mkfs[$bootfs]} ro${mountopts[$bootfs]} 0 2" >> $SDCARD/etc/fstab
 	fi
 
 	##
