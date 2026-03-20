@@ -7,20 +7,12 @@ Subject: Restore rockchip_i2s_tdm default clk rates
 Signed-off-by: Brent Roman <genosenosor@gmail.com>
 ---
  sound/soc/rockchip/rockchip_i2s_tdm.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ 1 file changed, 3 insertions(+)
 
 diff --git a/sound/soc/rockchip/rockchip_i2s_tdm.c b/sound/soc/rockchip/rockchip_i2s_tdm.c
 index 111111111111..222222222222 100644
 --- a/sound/soc/rockchip/rockchip_i2s_tdm.c
 +++ b/sound/soc/rockchip/rockchip_i2s_tdm.c
-@@ -22,6 +22,7 @@
- 
- #define DRV_NAME "rockchip-i2s-tdm"
- 
-+#define DEFAULT_MCLK_FS				256
- #define CH_GRP_MAX				4  /* The max channel 8 / 2 */
- #define MULTIPLEX_CH_MAX			10
- 
 @@ -693,6 +694,9 @@ static int rockchip_i2s_tdm_hw_params(struct snd_pcm_substream *substream,
  			mclk_rate = i2s_tdm->mclk_rx_freq;
  		}
